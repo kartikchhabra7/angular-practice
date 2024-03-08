@@ -1,0 +1,38 @@
+<header>
+  <h2 class="text-primary-emphasis text-center">Search Filter</h2>
+  <hr class="hr-line" />
+</header>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control mb-5"
+          [(ngModel)]="inputVal"
+          (keyup)="searchData()"
+          placeholder="Search..."
+        />
+      </div>
+    </div>
+  </div>
+
+  <section class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          @if (isDataFound()) { @for (item of userData; track item) {
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <span [innerHTML]="markText(item.name)"></span>
+            </li>
+          </ul>
+          } } @else {
+          <div class="alert alert-warning mt-3 fw-medium">Data Not Found !</div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
