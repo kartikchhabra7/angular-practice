@@ -1,0 +1,30 @@
+<main>
+  <header class="text-center text-danger-emphasis mt-2">
+    <h2>Search Filter In Api</h2>
+    <hr />
+  </header>
+  <section>
+    <input
+      type="text"
+      class="form-control container w-25 mt-5"
+      [(ngModel)]="inputValue"
+      (keyup)="searchData()"
+      placeholder="Search..."
+    />
+    <br />
+  </section>
+
+  <section>
+    <ul class="list-group">
+      @if (storeData.length>0) { @for (item of storeData; track item.id) {
+      <li class="list-group-item container">
+        <span [innerHTML]="markTest(item.title)"></span>
+      </li>
+      } } @else {
+      <div class="alert alert-warning mt-3 text-center text-capitalize">
+        <strong>{{ inputValue || "Data" }} is not existed !</strong>
+      </div>
+      }
+    </ul>
+  </section>
+</main>
