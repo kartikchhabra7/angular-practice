@@ -1,0 +1,28 @@
+<main>
+  <header class="mt-3 text-center">
+    <h2 class="text-danger-emphasis">Random Api Task</h2>
+    <hr
+      [ngStyle]="{ width: '50%', margin: 'auto', border: '5px solid #36454f' }"
+    />
+  </header>
+
+  <section class="container mt-4">
+    <div class="text-center mb-4">
+      <button class="btn btn-outline-primary" (click)="incrementData()">
+        Increment
+      </button>
+    </div>
+    <ul class="list-group">
+      @for (item of storeData; track item.id) {
+      <li
+        class="list-group-item d-flex justify-content-center align-items-center"
+      >
+        <span class="mx-5"> {{ item.community | slice : 0 : 10 }}</span>
+        <button class="btn btn-danger" (click)="deleteData(item.id)">
+          Delete
+        </button>
+      </li>
+      }
+    </ul>
+  </section>
+</main>

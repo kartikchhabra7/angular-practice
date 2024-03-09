@@ -3,6 +3,7 @@ import { TodoWithTemplateReferenceComponent } from './todo-with-template-referen
 import { TodoWithTwoWayDatabindingComponent } from './todo-with-two-way-databinding/todo-with-two-way-databinding.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { SearchFilterInApiComponent } from './search-filter-in-api/search-filter-in-api.component';
+import { RandomApiTaskComponent } from './random-api-task/random-api-task.component';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,10 @@ export const routes: Routes = [
   {
     path: 'search-filter-api',
     component: SearchFilterInApiComponent,
+  },
+  {
+    path: 'api-task',
+    component: RandomApiTaskComponent,
   },
   {
     path: '**',
